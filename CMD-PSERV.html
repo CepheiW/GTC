@@ -1,0 +1,521 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <title>command</title>
+    <meta name="GENERATOR" content="HeidiSQL 11.0.0.5919">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+      thead tr {background-color: ActiveCaption; color: CaptionText;}
+      th, td {vertical-align: top; font-family: "Segoe UI", Arial, Helvetica, sans-serif; font-size: 9pt; padding: 3px; }
+      table, td {border: 1px solid silver;}
+      table {border-collapse: collapse;}
+      thead .col0 {width: 178px;}
+      thead .col1 {width: 69px;}
+      .col1 {text-align: right;}
+      thead .col2 {width: 300px;}
+    </style>
+  </head>
+
+  <body>
+
+    <table caption="command (310 rows)">
+      <tbody>
+        <tr>
+          <td class="col0">additem</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .additem #itemid/[#itemname]/#shift-click-item-link #itemcount
+
+Adds the specified number of items of id #itemid (or exact (!) name $itemname in brackets, or link created by shift-click at item in inventory or recipe) to your or selected character inventory. If #itemcount is omitted, only one item will be added.
+.</td>
+        </tr>
+        <tr>
+          <td class="col0">additemset</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .additemset #itemsetid
+
+Add items from itemset of id #itemsetid to your or selected character inventory. Will add by one example each item from itemset.</td>
+        </tr>
+        <tr>
+          <td class="col0">bank</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .bank
+
+Show your bank inventory.</td>
+        </tr>
+        <tr>
+          <td class="col0">cooldown clear</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .cooldown clear [spell id] Remove cooldown from selected unit.</td>
+        </tr>
+        <tr>
+          <td class="col0">distance</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .distance [$name/$link]
+
+Display the distance from your character to the selected creature/player, or player with name $name, or player/creature/gameobject pointed to shift-link with guid.</td>
+        </tr>
+        <tr>
+          <td class="col0">gm</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .gm [on/off]
+
+Enable or Disable in game GM MODE or show current state of on/off not provided.</td>
+        </tr>
+        <tr>
+          <td class="col0">gm chat</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .gm chat [on/off]
+
+Enable or disable chat GM MODE (show gm badge in messages) or show current state of on/off not provided.</td>
+        </tr>
+        <tr>
+          <td class="col0">gm fly</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .gm fly [on/off]
+Enable/disable gm fly mode.</td>
+        </tr>
+        <tr>
+          <td class="col0">go</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .go  [$playername|pointlink|#x #y #z [#mapid]]
+Teleport your character to point with coordinates of player $playername, or coordinates of one from shift-link types: player, tele, taxinode, creature/creature_entry, gameobject/gameobject_entry, or explicit #x #y #z #mapid coordinates.</td>
+        </tr>
+        <tr>
+          <td class="col0">go creature</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .go creature (#creature_guid|$creature_name|id #creature_id)
+Teleport your character to creature with guid #creature_guid, or teleport your character to creature with name including as part $creature_name substring, or teleport your character to a creature that was spawned from the template with this entry #creature_id.</td>
+        </tr>
+        <tr>
+          <td class="col0">go graveyard</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .go graveyard #graveyardId
+ Teleport to graveyard with the graveyardId specified.</td>
+        </tr>
+        <tr>
+          <td class="col0">goname</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .goname [$charactername]
+
+Teleport to the given character. Either specify the character name or click on the character's portrait, e.g. when you are in a group. Character can be offline.</td>
+        </tr>
+        <tr>
+          <td class="col0">gps</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .gps [$name|$shift-link]
+
+Display the position information for a selected character or creature (also if player name $name provided then for named player, or if creature/gameobject shift-link provided then pointed creature/gameobject if it loaded). Position information includes X, Y, Z, and orientation, map Id and zone Id</td>
+        </tr>
+        <tr>
+          <td class="col0">groupgo</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .groupgo [$charactername]
+
+Teleport the given character and his group to you. Teleported only online characters but original selected group member can be offline.</td>
+        </tr>
+        <tr>
+          <td class="col0">help</td>
+          <td class="col1">0</td>
+          <td class="col2">Syntax: .help [$command]
+
+Display usage instructions for the given $command. If no $command provided show list available commands.</td>
+        </tr>
+        <tr>
+          <td class="col0">learn</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .learn #spell [all]
+
+Selected character learn a spell of id #spell. If 'all' provided then all ranks learned.</td>
+        </tr>
+        <tr>
+          <td class="col0">learn all_recipes</td>
+          <td class="col1">2</td>
+          <td class="col2">Syntax: .learn all_recipes [$profession]
+
+Learns all recipes of specified profession and sets skill level to max.
+Example: .learn all_recipes enchanting</td>
+        </tr>
+        <tr>
+          <td class="col0">levelup</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .levelup [$playername] [#numberoflevels]
+
+Increase/decrease the level of character with $playername (or the selected if not name provided) by #numberoflevels Or +1 if no #numberoflevels provided). If #numberoflevels is omitted, the level will be increase by 1. If #numberoflevels is 0, the same level will be restarted. If no character is selected and name not provided, increase your level. Command can be used for offline character. All stats and dependent values recalculated. At level decrease talents can be reset if need. Also at level decrease equipped items with greater level requirement can be lost.</td>
+        </tr>
+        <tr>
+          <td class="col0">lookup creature</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .lookup creature $namepart
+
+Looks up a creature by $namepart, and returns all matches with their creature ID's.</td>
+        </tr>
+        <tr>
+          <td class="col0">lookup event</td>
+          <td class="col1">2</td>
+          <td class="col2">Syntax: .lookup event $name
+Attempts to find the ID of the event with the provided $name.</td>
+        </tr>
+        <tr>
+          <td class="col0">lookup item</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .lookup item $itemname
+
+Looks up an item by $itemname, and returns all matches with their Item ID's.</td>
+        </tr>
+        <tr>
+          <td class="col0">lookup itemset</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .lookup itemset $itemname
+
+Looks up an item set by $itemname, and returns all matches with their Item set ID's.</td>
+        </tr>
+        <tr>
+          <td class="col0">lookup object</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .lookup object $objname
+
+Looks up an gameobject by $objname, and returns all matches with their Gameobject ID's.</td>
+        </tr>
+        <tr>
+          <td class="col0">lookup quest</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .lookup quest $namepart
+
+Looks up a quest by $namepart, and returns all matches with their quest ID's.</td>
+        </tr>
+        <tr>
+          <td class="col0">lookup skill</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .lookup skill $$namepart
+
+Looks up a skill by $namepart, and returns all matches with their skill ID's.</td>
+        </tr>
+        <tr>
+          <td class="col0">lookup spell</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .lookup spell $namepart
+
+Looks up a spell by $namepart, and returns all matches with their spell ID's.</td>
+        </tr>
+        <tr>
+          <td class="col0">lookup tele</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .lookup tele $substring
+
+Search and output all .tele command locations with provide $substring in name.</td>
+        </tr>
+        <tr>
+          <td class="col0">lookup title</td>
+          <td class="col1">2</td>
+          <td class="col2">Syntax: .lookup title $$namepart
+
+Looks up a title by $namepart, and returns all matches with their title ID's and index's.</td>
+        </tr>
+        <tr>
+          <td class="col0">maxskill</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .maxskill
+Sets all skills of the targeted player to their maximum values for its current level.</td>
+        </tr>
+        <tr>
+          <td class="col0">modify aspeed</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .modify aspeed #rate
+
+Modify all speeds -run,swim,run back,swim back- of the selected player to "normalbase speed for this move type"*rate. If no player is selected, modify your speed.
+
+ #rate may range from 0.1 to 10.</td>
+        </tr>
+        <tr>
+          <td class="col0">modify bwalk</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .modify bwalk #rate
+
+Modify the speed of the selected player while running backwards to "normal walk back speed"*rate. If no player is selected, modify your speed.
+
+ #rate may range from 0.1 to 10.</td>
+        </tr>
+        <tr>
+          <td class="col0">modify drunk</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .modify drunk #value
+ Set drunk level to #value (0..100). Value 0 remove drunk state, 100 is max drunked state.</td>
+        </tr>
+        <tr>
+          <td class="col0">modify faction</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .modify faction #factionid #flagid #npcflagid #dynamicflagid
+
+Modify the faction and flags of the selected creature. Without arguments, display the faction and flags of the selected creature.</td>
+        </tr>
+        <tr>
+          <td class="col0">modify fly</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .modify fly #rate
+.fly #rate
+
+Modify the flying speed of the selected player to "normal base fly speed"*rate. If no player is selected, modify your fly.
+
+ #rate may range from 0.1 to 10.</td>
+        </tr>
+        <tr>
+          <td class="col0">modify gender</td>
+          <td class="col1">2</td>
+          <td class="col2">Syntax: .modify gender male/female
+
+Change gender of selected player.</td>
+        </tr>
+        <tr>
+          <td class="col0">modify honor</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .modify honor $amount
+
+Add $amount honor points to the selected player.</td>
+        </tr>
+        <tr>
+          <td class="col0">modify money</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .modify money #money
+.money #money
+
+Add or remove money to the selected player. If no player is selected, modify your money.
+
+ #gold can be negative to remove money.</td>
+        </tr>
+        <tr>
+          <td class="col0">modify morph</td>
+          <td class="col1">2</td>
+          <td class="col2">Syntax: .modify morph #displayid
+
+Change your current model id to #displayid.</td>
+        </tr>
+        <tr>
+          <td class="col0">modify mount</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .modify mount [fast|slow]
+
+Provide selected player a random unusual land mount.</td>
+        </tr>
+        <tr>
+          <td class="col0">modify rep</td>
+          <td class="col1">2</td>
+          <td class="col2">Syntax: .modify rep #repId (#repvalue | $rankname [#delta])
+Sets the selected players reputation with faction #repId to #repvalue or to $reprank.
+If the reputation rank name is provided, the resulting reputation will be the lowest reputation for that rank plus the delta amount, if specified.
+You can use '.pinfo rep' to list all known reputation ids, or use '.lookup faction $name' to locate a specific faction id.</td>
+        </tr>
+        <tr>
+          <td class="col0">modify scale</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .modify scale #scale
+
+Change model scale for targeted player (util relogin) or creature (until respawn).</td>
+        </tr>
+        <tr>
+          <td class="col0">modify speed</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .modify speed #rate
+.speed #rate
+
+Modify the running speed of the selected player to "normal base run speed"*rate. If no player is selected, modify your speed.
+
+ #rate may range from 0.1 to 10.</td>
+        </tr>
+        <tr>
+          <td class="col0">modify standstate</td>
+          <td class="col1">2</td>
+          <td class="col2">Syntax: .modify standstate #emoteid
+
+Change the emote of your character while standing to #emoteid.</td>
+        </tr>
+        <tr>
+          <td class="col0">modify swim</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .modify swim #rate
+
+Modify the swim speed of the selected player to "normal swim speed"*rate. If no player is selected, modify your speed.
+
+ #rate may range from 0.1 to 10.</td>
+        </tr>
+        <tr>
+          <td class="col0">namego</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .namego [$charactername]
+
+Teleport the given character to you. Character can be offline.</td>
+        </tr>
+        <tr>
+          <td class="col0">neargrave</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .neargrave [alliance|horde]
+
+Find nearest graveyard linked to zone (or only nearest from accepts alliance or horde faction ghosts).</td>
+        </tr>
+        <tr>
+          <td class="col0">npc add</td>
+          <td class="col1">2</td>
+          <td class="col2">Syntax: .npc add #creatureid
+
+Spawn a creature by the given template id of #creatureid.</td>
+        </tr>
+        <tr>
+          <td class="col0">quest add</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .quest add #quest_id
+
+Add to character quest log quest #quest_id. Quest started from item can't be added by this command but correct .additem call provided in command output.</td>
+        </tr>
+        <tr>
+          <td class="col0">quest complete</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .quest complete #questid
+Mark all quest objectives as completed for target character active quest. After this target character can go and get quest reward.</td>
+        </tr>
+        <tr>
+          <td class="col0">quest remove</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .quest remove #quest_id
+
+Set quest #quest_id state to not completed and not active (and remove from active quest list) for selected player.</td>
+        </tr>
+        <tr>
+          <td class="col0">recall</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .recall [$playername]
+
+Teleport $playername or selected player to the place where he has been before last use of a teleportation command. If no $playername is entered and no player is selected, it will teleport you.</td>
+        </tr>
+        <tr>
+          <td class="col0">repairitems</td>
+          <td class="col1">2</td>
+          <td class="col2">Syntax: .repairitems
+
+Repair all selected player's items.</td>
+        </tr>
+        <tr>
+          <td class="col0">reset honor</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .reset honor [Playername]
+  Reset all honor data for targeted character.</td>
+        </tr>
+        <tr>
+          <td class="col0">reset spells</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .reset spells [Playername]
+  Removes all non-original spells from spellbook.
+. Playername can be name of offline character.</td>
+        </tr>
+        <tr>
+          <td class="col0">reset stats</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .reset stats [Playername]
+  Resets(recalculate) all stats of the targeted player to their original VALUESat current level.</td>
+        </tr>
+        <tr>
+          <td class="col0">reset talents</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .reset talents [Playername]
+  Removes all talents of the targeted player. Playername can be name of offline character.</td>
+        </tr>
+        <tr>
+          <td class="col0">respawn</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .respawn
+
+Respawn selected creature or respawn all nearest creatures (if none selected) and GO without waiting respawn time expiration.</td>
+        </tr>
+        <tr>
+          <td class="col0">revive</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .revive
+
+Revive the selected player. If no player is selected, it will revive you.</td>
+        </tr>
+        <tr>
+          <td class="col0">save</td>
+          <td class="col1">0</td>
+          <td class="col2">Syntax: .save
+
+Saves your character.</td>
+        </tr>
+        <tr>
+          <td class="col0">saveall</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .saveall
+
+Save all characters in game.</td>
+        </tr>
+        <tr>
+          <td class="col0">setskill</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .setskill #skill #level [#max]
+
+Set a skill of id #skill with a current skill value of #level and a maximum value of #max (or equal current maximum if not provide) for the selected character. If no character is selected, you learn the skill.</td>
+        </tr>
+        <tr>
+          <td class="col0">showarea</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .showarea #areaid
+
+Reveal the area of #areaid to the selected character. If no character is selected, reveal this area to you.</td>
+        </tr>
+        <tr>
+          <td class="col0">stable</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .stable
+
+Show your pet stable.</td>
+        </tr>
+        <tr>
+          <td class="col0">start</td>
+          <td class="col1">0</td>
+          <td class="col2">Syntax: .start
+
+Teleport you to the starting area of your character.</td>
+        </tr>
+        <tr>
+          <td class="col0">tele</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .tele #location
+
+Teleport player to a given location.</td>
+        </tr>
+        <tr>
+          <td class="col0">tele group</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .tele group#location
+
+Teleport a selected player and his group members to a given location.</td>
+        </tr>
+        <tr>
+          <td class="col0">tele name</td>
+          <td class="col1">1</td>
+          <td class="col2">Syntax: .tele name [#playername] #location
+
+Teleport the given character to a given location. Character can be offline.</td>
+        </tr>
+        <tr>
+          <td class="col0">unlearn</td>
+          <td class="col1">3</td>
+          <td class="col2">Syntax: .unlearn #spell [all]
+
+Unlearn for selected player a spell #spell.  If 'all' provided then all ranks unlearned.</td>
+        </tr>
+        <tr>
+          <td class="col0">waterwalk</td>
+          <td class="col1">2</td>
+          <td class="col2">Syntax: .waterwalk on/off
+
+Set on/off waterwalk state for selected player.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <em>generated 2021-04-08 18:40:19      by <a href="https://www.heidisql.com/">HeidiSQL 11.0.0.5919</a></em>
+    </p>
+
+  </body>
+</html>
